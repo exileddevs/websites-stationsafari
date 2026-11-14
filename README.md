@@ -5,9 +5,10 @@ The website for Station Safari, served at https://stationsafari.com by GitHub Pa
 ## What is here
 
 - `index.html`: landing page
+- `gameplay/index.html`: how the app works, with screenshots and themes
 - `privacy/index.html`: privacy policy, linked from the Google Play listing at https://stationsafari.com/privacy/
 - `style.css`: shared styles (light and dark). Colours come from the logo: navy `#273654` (the app's `Colours.primary`), red `#731d17`, gold `#c08b54`
-- `images/`: the logo (`logo.png`, `favicon.png`, `apple-touch-icon.png`) and the four background themes as 480px wide WebP
+- `images/`: the logo (`logo.png`, `favicon.png`, `apple-touch-icon.png`), the four background themes (`theme-*.webp`) and app screenshots (`shot-*.webp`), all WebP at 420 to 480px wide
 - `CNAME`: the custom domain for Pages
 - `.nojekyll`: tells Pages to serve the files as they are
 
