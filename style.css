@@ -1,23 +1,30 @@
 :root {
+    /* Logo palette: navy from the app's Colours.primary, red wheels, gold bands */
+    --navy: #273654;
+    --red: #731d17;
+    --gold: #c08b54;
     --bg: #fbf9f4;
     --surface: #ffffff;
     --ink: #1d2433;
     --muted: #55607a;
-    --brand: #243a9c;
+    --brand: var(--navy);
     --brand-ink: #ffffff;
-    --accent: #f2a900;
+    --link: var(--navy);
+    --accent: var(--gold);
+    --badge-bg: var(--red);
+    --badge-ink: #ffffff;
     --line: #e3dfd4;
 }
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #11162a;
-        --surface: #1a2140;
+        --bg: #101624;
+        --surface: #182238;
         --ink: #eef0f8;
         --muted: #aab3d0;
-        --brand: #8fa2ff;
-        --brand-ink: #11162a;
-        --accent: #f2b83a;
-        --line: #2b3560;
+        --brand: #273654;
+        --link: #b4c4ea;
+        --badge-bg: #8f2a22;
+        --line: #2c3a58;
     }
 }
 * { box-sizing: border-box; }
@@ -28,12 +35,14 @@ body {
     color: var(--ink);
     font: 1.0625rem/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
-a { color: var(--brand); text-underline-offset: 3px; }
+a { color: var(--link); text-underline-offset: 3px; }
 a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-.wrap { max-width: 44rem; margin: 0 auto; padding: 0 1rem; }
+.wrap { max-width: 52rem; margin: 0 auto; padding: 0 1rem; }
 header.site { border-bottom: 4px solid var(--accent); background: var(--brand); }
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: .9rem; padding-bottom: .9rem; }
 header.site a { color: var(--brand-ink); text-decoration: none; font-weight: 700; font-size: 1.15rem; }
+header.site a.brand { display: inline-flex; align-items: center; gap: .6rem; }
+header.site a.brand img { border-radius: 8px; }
 header.site nav a { font-weight: 500; font-size: 1rem; margin-left: 1rem; text-decoration: underline; }
 main { padding: 2.25rem 0 3rem; }
 h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); line-height: 1.15; margin: 0 0 .75rem; }
@@ -47,6 +56,22 @@ li { margin-bottom: .4rem; }
 .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin: 1.5rem 0; padding: 0; list-style: none; }
 .grid li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.1rem; margin: 0; }
 .grid strong { display: block; margin-bottom: .25rem; }
-.badge { display: inline-block; background: var(--accent); color: #1d2433; font-weight: 700; border-radius: 999px; padding: .25rem .8rem; font-size: .95rem; }
+.badge { display: inline-block; background: var(--badge-bg); color: var(--badge-ink); font-weight: 700; border-radius: 999px; padding: .25rem .8rem; font-size: .95rem; }
 .small { color: var(--muted); font-size: .95rem; }
 footer.site { border-top: 1px solid var(--line); padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .95rem; }
+.hero { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2rem; }
+.hero > div { flex: 1 1 18rem; }
+.hero .logo { width: 11rem; height: auto; border-radius: 24px; border: 3px solid var(--gold); background: #d9e6e8; }
+.themes { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); padding: 0; list-style: none; margin: 1.25rem 0 0; }
+.themes li { margin: 0; text-align: center; font-weight: 600; }
+.themes img { display: block; width: 100%; height: auto; aspect-ratio: 480 / 1011; object-fit: cover; border-radius: 14px; border: 2px solid var(--gold); margin-bottom: .4rem; }
+.shots { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); align-items: start; padding: 0; list-style: none; margin: 1.25rem 0 1.5rem; }
+.shots.two { grid-template-columns: repeat(auto-fit, minmax(9rem, 14rem)); }
+.shots.one { grid-template-columns: minmax(9rem, 14rem); }
+.shots li { margin: 0; text-align: center; font-weight: 600; font-size: .95rem; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 14px; border: 2px solid var(--gold); margin-bottom: .4rem; }
+.steps { padding-left: 1.4rem; }
+.steps li { margin-bottom: .6rem; }
+.card h3 { margin: 1rem 0 .15rem; font-size: 1.1rem; }
+.card h3:first-child { margin-top: 0; }
+@media (max-width: 30rem) { header.site .wrap { flex-wrap: wrap; gap: .4rem; } header.site nav a:first-child { margin-left: 0; } }
