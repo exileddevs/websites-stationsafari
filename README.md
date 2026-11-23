@@ -6,6 +6,7 @@ The website for Station Safari, served at https://stationsafari.com by GitHub Pa
 
 - `index.html`: landing page
 - `gameplay/index.html`: how the app works, with screenshots and themes
+- `test/index.html`: how to join the Google Play closed test (the testers group and opt-in link), for sharing with testers. Not linked from the site menu and set to `noindex`, so remove it or update the links when the test ends
 - `terms/index.html`: the terms of service
 - `privacy/index.html`: privacy policy, linked from the Google Play listing at https://stationsafari.com/privacy/
 - `style.css`: shared styles (light and dark). Colours come from the logo: navy `#273654` (the app's `Colours.primary`), red `#731d17`, gold `#c08b54`
